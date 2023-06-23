@@ -51,7 +51,7 @@ public class Player : MonoBehaviour {
 		var pos = goOutCard.localPosition;
 		_pxOutCard = pos.x;
 		_pyOutCard = pos.y;
-		adMgr = AudioMgr.getInstance ();
+		// adMgr = AudioMgr.getInstance ();
 		var posP = goOutCard.parent.localPosition;
 		_pxOut = posP.x;
 		_pyOut = posP.y;
@@ -94,7 +94,7 @@ public class Player : MonoBehaviour {
 		}
 		var iLen = transP.childCount;
 		if (lCard.Count > 0) {
-			adMgr.PlaySound ("givecard");
+		// adMgr.PlaySound ("givecard");
 			for (int i = 0; i < lCard.Count; i++) {
 				Transform item;
 				if (i >= iLen) {

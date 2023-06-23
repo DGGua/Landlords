@@ -154,7 +154,7 @@ public class Online : MonoBehaviour, IMain {
 		_pxHandCard = pos.x;
 		_pyHandCard = pos.y;
 		playCardControl = new PlayCardControl (this);
-		adMgr = AudioMgr.getInstance ();
+	// adMgr = AudioMgr.getInstance ();
 	}
 
 	void initShow(){
@@ -222,15 +222,15 @@ public class Online : MonoBehaviour, IMain {
 				lPlayer [1].showOutCard (lCard [1]);
 			if (lCard [2].Count > 0)
 				lPlayer [2].showOutCard (lCard [2]);
-			adMgr.PlayMusic ("Welcome");
+		// adMgr.PlayMusic ("Welcome");
 		} else {
-			adMgr.PlayMusic ("Normal");
+		// adMgr.PlayMusic ("Normal");
 		}
 	}
 
 	IEnumerator playDealCard(){
 		yield return new WaitForSeconds (0.1f);
-		adMgr.PlaySound ("sendcard");
+	// adMgr.PlaySound ("sendcard");
 		yield return new WaitForSeconds (0.2f);
         var lCardNum = lCard[0];
 		var transP = goHandCard.parent;
@@ -255,7 +255,7 @@ public class Online : MonoBehaviour, IMain {
 
 	void onStart(){
 		setTouchable (false);
-		adMgr.PlaySound ("start");
+	// adMgr.PlaySound ("start");
 		showStartBtn (false);
 		//reset ();
 		StartCoroutine (playDealCard ());
@@ -265,7 +265,7 @@ public class Online : MonoBehaviour, IMain {
 		var lOutCardTemp = lOutCard [2].Count > 0 ? lOutCard [2] : lOutCard [1];
 		//if (_iTurn == 0 && lOutCardTemp.Count == 0)
 			//return;
-		adMgr.PlaySound ("buyao");
+	// adMgr.PlaySound ("buyao");
 		showBtns (false);
 		onClickBg ();
 		if (_iBtnType == 1) {
@@ -280,7 +280,7 @@ public class Online : MonoBehaviour, IMain {
 
 	void onClickRight(){
 		if (_iBtnType == 0) {
-			adMgr.PlaySound ("jiaodizhu");
+		// adMgr.PlaySound ("jiaodizhu");
 			showBtns (false);
 			lPlayer [0].showTips (goRight.GetChild (0).GetComponent<Text> ().text);
             HttpClient.Instance.Send(8, roomName, "1");
@@ -318,7 +318,7 @@ public class Online : MonoBehaviour, IMain {
 				showGloTips ("无效的牌");
 				return;
 			}
-			adMgr.PlayCardSound (iCardType, iCardNum);
+		// adMgr.PlayCardSound (iCardType, iCardNum);
 			for (int i = 0; i < lCardNum.Count; i++) {
 				lCard [_iTurn].Remove (lCardNum [i]);
 			}
@@ -330,16 +330,16 @@ public class Online : MonoBehaviour, IMain {
 			showBtns (false);
 			switch (lCard [0].Count) {
 			case 0:
-				adMgr.PlaySound ("win");
+			// adMgr.PlaySound ("win");
 				showGloTips ("你赢了");
 				showStartBtn (true);
 				return;
 			case 1:
-				adMgr.PlaySound ("baojing1");
+			// adMgr.PlaySound ("baojing1");
 				_bOneLeft = true;
 				break;
 			case 2:
-				adMgr.PlaySound ("baojing2");
+			// adMgr.PlaySound ("baojing2");
 				break;
 			}
             string s = "";
@@ -522,12 +522,12 @@ public class Online : MonoBehaviour, IMain {
 		var lOutCardTemp = lOutCard [_iTurn - 1].Count > 0 ? lOutCard [_iTurn - 1] : lOutCard [4 - 2 * _iTurn];
 		var lIdx = playCardControl.getTipCardIdx (lCard [_iTurn], -1, lOutCardTemp);
 		if (lIdx.Count == 0) {
-			adMgr.PlaySound ("buyao");
+		// adMgr.PlaySound ("buyao");
 			lPlayer [_iTurn].showOutCard (lIdx);
 			lPlayer [_iTurn].showTips ("不要");
 			lOutCard [_iTurn].Clear ();
 		} else {
-			adMgr.PlayCardSound (playCardControl.getCardType(), playCardControl.getCardNum());
+		// adMgr.PlayCardSound (playCardControl.getCardType(), playCardControl.getCardNum());
 			List<int> lCardNum = new List<int> ();
 			for (int i = 0; i < lIdx.Count; i++) {
 				lCardNum.Add (lCard [_iTurn] [lIdx [i]]);
@@ -540,16 +540,16 @@ public class Online : MonoBehaviour, IMain {
 			lPlayer [_iTurn].showLeftLab (lCard [_iTurn].Count);
 			switch (lCard [_iTurn].Count) {
 			case 0:
-				adMgr.PlaySound ("lose");
+			// adMgr.PlaySound ("lose");
 				showGloTips ("你输了");
 				showStartBtn (true);
 				return;
 			case 1:
-				adMgr.PlaySound ("baojing1");
+			// adMgr.PlaySound ("baojing1");
 				_bOneLeft = true;
 				break;
 			case 2:
-				adMgr.PlaySound ("baojing2");
+			// adMgr.PlaySound ("baojing2");
 				break;
 			}
 		}

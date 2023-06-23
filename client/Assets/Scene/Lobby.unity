@@ -770,7 +770,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 467459773}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efba4ac12c88c4aa688da3a27ef6610f, type: 3}
+  m_Script: {fileID: 11500000, guid: 75bb7c5591d0e9a4db537a5748da8f9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!225 &467459779
@@ -2118,8 +2118,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ec58d2c8d6464809be156a81fa11705, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  music: {fileID: 1190038152}
-  sound: {fileID: 1798422281}
 --- !u!1 &1645923413
 GameObject:
   m_ObjectHideFlags: 0

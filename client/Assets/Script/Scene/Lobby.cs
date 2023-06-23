@@ -22,7 +22,7 @@ public class Lobby : MonoBehaviour
         initParas();
         initEvent();
         initShow();
-        HttpClient.Instance.Send(2);
+        // HttpClient.Instance.Send(2);
     }
 
     // Update is called once per frame

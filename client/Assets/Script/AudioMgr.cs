@@ -13,7 +13,7 @@ public class AudioMgr : MonoBehaviour {
 
 	public static AudioMgr getInstance() {
 		if (adMgr == null)
-			adMgr = go.GetComponent<AudioMgr> ();
+		adMgr = go.GetComponent<AudioMgr> ();
 		return adMgr;
 	}
 
