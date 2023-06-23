@@ -1,4 +1,1 @@
-# Landlords
-Landlords  
-# 斗地主：[安卓Android](https://fir.im/8hs7) 
-![Image](https://raw.githubusercontent.com/aschen518/Landlords/master/jt1.png)
+# 裁掉了[原仓库](https://github.com/SmileChen518/Landlords)的联机功能
