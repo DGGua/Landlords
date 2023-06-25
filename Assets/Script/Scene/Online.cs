@@ -444,7 +444,7 @@ public class Online : MonoBehaviour, IMain {
 		for (int i = 0; i < transP.childCount; i++) {
 			var item = transP.GetChild (i);
 			if (item.localPosition.y == _pyHandCard + DY) {
-				lOutCardNum.Add (item.GetComponent<Card> ().getICard ());
+				lOutCardNum.Add (item.GetComponent<Card> ().getCardNumber ());
 			}
 		}
 		return lOutCardNum;
