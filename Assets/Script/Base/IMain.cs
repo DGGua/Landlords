@@ -1,7 +1,6 @@
 ﻿using System;
 
-public interface IMain
-{
+public interface IMain {
     Boolean getBOneLeft();
     void setIDown(int idx);
     void onEnter(int idx);

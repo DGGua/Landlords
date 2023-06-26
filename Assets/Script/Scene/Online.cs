@@ -141,7 +141,7 @@ public class Online : MonoBehaviour, IMain {
         _pxHandCard = pos.x;
         _pyHandCard = pos.y;
         playCardControl = new PlayCardControl(this);
-         adMgr = AudioMgr.getInstance ();
+        adMgr = AudioMgr.getInstance();
     }
 
     void initShow() {
@@ -303,7 +303,7 @@ public class Online : MonoBehaviour, IMain {
                 showGloTips("无效的牌");
                 return;
             }
-             adMgr.PlayCardSound(iCardType, iCardNum);
+            adMgr.PlayCardSound(iCardType, iCardNum);
             for (int i = 0; i < lCardNum.Count; i++) {
                 lCard[_iTurn].Remove(lCardNum[i]);
             }
